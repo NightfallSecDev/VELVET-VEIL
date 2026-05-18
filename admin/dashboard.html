@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Command Center | Velvet &amp; Veil</title>
+    <meta name="description" content="Luxury makeup storefront admin dashboard. Monitor sales, recent orders, and premium product inventory.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <div class="admin-layout">
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <a href="./dashboard.html" class="admin-logo">
+                VELVET <span>ADMIN</span>
+            </a>
+            <nav class="admin-nav">
+                <a href="./dashboard.html" class="admin-nav-link active">
+                    <span>&#12480;</span>
+                    <span>Dashboard Overview</span>
+                </a>
+                <a href="./orders.html" class="admin-nav-link">
+                    <span>&#9993;</span>
+                    <span>Order Management</span>
+                </a>
+                <a href="./products.html" class="admin-nav-link">
+                    <span>&#9733;</span>
+                    <span>Product Inventory</span>
+                </a>
+                <a href="../index.html" class="admin-nav-link" style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); border-radius: 0; padding-top: 1.5rem;">
+                    <span>&larr;</span>
+                    <span>Live Storefront</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 class="admin-title">Command Center</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 0.9rem; color: #888;">System Status:</span>
+                    <span style="background: #d4edda; color: #155724; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.8rem;">Client Storage Lab Online</span>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">Total Revenue</div>
+                    <div class="stat-val stat-rev">₹0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Total Orders</div>
+                    <div class="stat-val stat-orders">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Pending Fulfillment</div>
+                    <div class="stat-val stat-pending">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Active Products</div>
+                    <div class="stat-val stat-products">0</div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="admin-table-container">
+                <div class="admin-table-header">
+                    <h2 style="font-size: 1.3rem; color: var(--dark-cocoa);">Recent Transactions</h2>
+                    <a href="./orders.html" style="font-size: 0.9rem; color: var(--rose-gold); font-weight: 600;">View All Orders &rarr;</a>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="recent-orders-tbody">
+                        <!-- Dynamically populated by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
