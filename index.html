@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet &amp; Veil | Clean Luxury Premium Cosmetics</title>
+    <meta name="description" content="Explore Velvet & Veil's premium clean luxury makeup storefront. Featuring Lip Lab, Face Architect, and Eye Matrix collections backed by high-performance client storage.">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        /* --- TRUST PILLARS SECTION --- */
+        .trust-section {
+            background-color: white;
+            padding: 6rem 2rem;
+            border-bottom: 1px solid var(--glass-border);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .trust-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--alabaster);
+            border-radius: 28px;
+            border: 1px solid rgba(183, 110, 121, 0.1);
+            transition: var(--transition);
+        }
+
+        .trust-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(183, 110, 121, 0.15);
+            background: white;
+            border-color: rgba(183, 110, 121, 0.3);
+        }
+
+        .trust-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: var(--bg-blush);
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rose-gold);
+            box-shadow: 0 10px 25px rgba(183, 110, 121, 0.25);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .trust-card:hover .trust-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .trust-title {
+            font-size: 1.3rem;
+            color: var(--dark-cocoa);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .trust-desc {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* --- CLIENT REVIEWS SECTION --- */
+        .reviews-section {
+            padding: 10rem 2rem 8rem;
+            background: linear-gradient(135deg, var(--alabaster) 0%, var(--bg-blush) 100%);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .reviews-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 4rem 3.5rem;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(43, 30, 31, 0.05);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 50px rgba(183, 110, 121, 0.2);
+            border-color: rgba(183, 110, 121, 0.3);
+        }
+
+        .review-stars {
+            color: #E0A96D;
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: 3px;
+        }
+
+        .review-quote {
+            font-size: 1.2rem;
+            color: #554344;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 3.5rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--rose-gold-dark) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(183, 110, 121, 0.3);
+        }
+
+        .author-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-cocoa);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-role {
+            font-size: 0.95rem;
+            color: #888;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .trust-container { grid-template-columns: repeat(2, 1fr); }
+            .reviews-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .trust-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="./index.html" class="brand-logo">
+                VELVET <span>&amp;</span> VEIL
+            </a>
+            <nav class="nav-links">
+                <a href="./index.html" class="nav-link active">Home</a>
+                <a href="./storefront/shop.html" class="nav-link">Shop Catalog</a>
+                <a href="./storefront/about.html" class="nav-link">About Us</a>
+                <a href="./storefront/contactus.html" class="nav-link">Contact Concierge</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="cart-toggle" aria-label="Open Cart">
+                    Bag
+                    <span class="cart-badge">0</span>
+                </a>
+                <div class="auth-menu">
+                    <!-- Dynamically populated by main.js -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">High-Performance Clean Luxury</span>
+                <h1 class="hero-title">Redefining Modern <span>Beauty Architecture</span></h1>
+                <p class="hero-desc">Experience weightless matte lip serums, surgical precision eye formulas, and breathable dewy foundations backed by high-performance client storage.</p>
+                <div class="hero-actions">
+                    <a href="./storefront/shop.html" class="btn-primary">Explore Catalog</a>
+                    <a href="./storefront/contactus.html" class="btn-secondary">Bespoke Concierge</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="./assets/images/face.png" alt="Velvet &amp; Veil Luxury Cosmetics" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Clean Luxury Pillars -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-card">
+                <div class="trust-icon">&#10024;</div>
+                <h3 class="trust-title">100% Clean Luxury</h3>
+                <p class="trust-desc">Formulated without parabens, sulfates, phthalates, or synthetic fillers. Pure botanical efficacy.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">&#128048;</div>
+                <h3 class="trust-title">Cruelty-Free &amp; Vegan</h3>
+                <p class="trust-desc">Leaping Bunny certified. Ethical clean beauty architecture never tested on animals.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">&#128142;</div>
+                <h3 class="trust-title">Bespoke Shade Matching</h3>
+                <p class="trust-desc">Surgical precision micro-pigments calibrated for absolute skin-matching tone accuracy.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">&#9992;&#65039;</div>
+                <h3 class="trust-title">VIP Express Delivery</h3>
+                <p class="trust-desc">Complimentary express shipping and 30-day concierge shade exchanges on all orders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Architecture Section -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-subtitle">Curated Collections</span>
+            <h2 class="section-title">Shop By Architecture</h2>
+            <p style="color: #554344; max-width: 500px; margin: 1rem auto 0;">Explore our three foundational cosmetic pillars designed for effortless application and enduring elegance.</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="./assets/images/lip.png" alt="Lip Artistry" class="category-img">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <span class="category-tag">LIP_LAB</span>
+                    <h3 class="category-title">Lip Artistry</h3>
+                    <p class="category-desc">Weightless matte lipsticks, plumping glosses, and nourishing argan oil serums.</p>
+                    <a href="./storefront/shop.html" class="category-link">Explore Collection &rarr;</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="./assets/images/face.png" alt="Face Sculpt &amp; Glow" class="category-img">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <span class="category-tag">FACE_ARCHITECT</span>
+                    <h3 class="category-title">Face Sculpt &amp; Glow</h3>
+                    <p class="category-desc">Breathable serum foundations, melt-into-skin blushes, and hyper-fine metallic highlighters.</p>
+                    <a href="./storefront/shop.html" class="category-link">Explore Collection &rarr;</a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="./assets/images/eye.png" alt="Eye Definition" class="category-img">
+                <div class="category-overlay"></div>
+                <div class="category-content">
+                    <span class="category-tag">EYE_MATRIX</span>
+                    <h3 class="category-title">Eye Definition</h3>
+                    <p class="category-desc">Surgical precision 0.1mm micro-tip liners, essential 9-shade palettes, and volume mascaras.</p>
+                    <a href="./storefront/shop.html" class="category-link">Explore Collection &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section-header">
+            <span class="section-subtitle">Flagship Releases</span>
+            <h2 class="section-title">Featured Luxury Products</h2>
+            <p style="color: #554344; max-width: 500px; margin: 1rem auto 0;">Hand-selected formulations featuring custom shade variants, micro-reflective flecks, and transfer-proof wear.</p>
+        </div>
+        <div class="product-grid featured-products-container">
+            <!-- Dynamically populated by main.js -->
+        </div>
+    </section>
+
+    <!-- Client Reviews & Editorial Praise -->
+    <section class="reviews-section">
+        <div class="reviews-container">
+            <div class="section-header">
+                <span class="section-subtitle">Insider Testimonials</span>
+                <h2 class="section-title">Praise From The Insider Veil</h2>
+                <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">Hear from celebrity makeup artists, beauty editors, and verified VIP clients who have made Velvet &amp; Veil their signature routine.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-quote">"The Velvet Matte Lip Serum is an absolute revelation. It sets in 30 seconds and survives an entire 12-hour editorial shoot without feathering or drying out the lips."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">EP</div>
+                        <div>
+                            <h4 class="author-name">Elena Rostova</h4>
+                            <span class="author-role">Lead Makeup Artist, Paris Fashion Week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-quote">"Finding my exact foundation match has always been a struggle until Velvet &amp; Veil. The Hydra Glow Serum Foundation melts into my skin like a second skin. Utterly flawless."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">AS</div>
+                        <div>
+                            <h4 class="author-name">Aanya Sharma</h4>
+                            <span class="author-role">Verified VIP Insider</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-quote">"A triumph in clean luxury cosmetics. The Metallic Veil Highlighter delivers a liquid-gold glass skin effect without any chalky residue. Highly recommended."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">VB</div>
+                        <div>
+                            <h4 class="author-name">Vogue Beauty Desk</h4>
+                            <span class="author-role">Editorial Review, May 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">Explore everything you need to know about our clean luxury formulations, custom shade matching, and VIP shipping concierge.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-header">
+                        <span>What makes Velvet &amp; Veil formulations clean luxury?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        All our products are rigorously formulated without parabens, sulfates, phthalates, or synthetic mineral oils. We combine pure botanical actives like cold-pressed organic Argan Oil with surgical precision micro-pigments for high-performance, skin-nourishing wear.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How does the 30-day complimentary shade exchange work?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        We understand that finding your absolute perfect foundation or lip tone online can be challenging. If your selected shade isn't a flawless match, simply contact our VIP concierge within 30 days of delivery. We will immediately dispatch a replacement shade entirely complimentary.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Are your products cruelty-free and vegan?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Yes, Velvet &amp; Veil is 100% Leaping Bunny certified cruelty-free. Our entire product architecture is vegan, utilizing advanced plant-derived squalane and synthetic beeswax alternatives to ensure zero animal testing or animal derivatives.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How long does VIP express shipping take?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Orders placed before 2:00 PM IST are processed same-day by our flagship lab. VIP Express delivery typically arrives within 1 to 3 business days across major metropolitan areas, complete with live concierge tracking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+            <div>
+                <a href="./index.html" class="brand-logo" style="color: white; margin-bottom: 1.5rem;">
+                    VELVET <span style="color: var(--rose-gold-light);">&amp;</span> VEIL
+                </a>
+                <p class="footer-desc">Premium clean luxury makeup storefront backed by high-performance client storage architecture. Redefining modern beauty.</p>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Categories</h4>
+                <div class="footer-links">
+                    <a href="./storefront/shop.html" class="footer-link">Lip Artistry (Lip Lab)</a>
+                    <a href="./storefront/shop.html" class="footer-link">Face Sculpt &amp; Glow</a>
+                    <a href="./storefront/shop.html" class="footer-link">Eye Definition (Matrix)</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="./index.html" class="footer-link">Home</a>
+                    <a href="./storefront/shop.html" class="footer-link">Shop Catalog</a>
+                    <a href="./storefront/about.html" class="footer-link">About Us</a>
+                    <a href="./storefront/contactus.html" class="footer-link">VIP Concierge</a>
+                    <a href="./admin/dashboard.html" class="footer-link">Admin Dashboard</a>
+                </div>
+
+            </div>
+            <div>
+                <h4 class="footer-col-title">Join The Insider Veil</h4>
+                <p class="footer-desc" style="font-size: 0.9rem;">Receive exclusive invitations to private shade releases and luxury beauty tutorials.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Velvet &amp; Veil Premium Cosmetics. All rights reserved.</div>
+            <div class="footer-legal-links">
+                <a href="./legal/privacy.html">Privacy Policy</a>
+                <a href="./legal/terms.html">Terms of Service</a>
+                <a href="./legal/refund.html">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/store.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
