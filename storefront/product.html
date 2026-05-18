@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Velvet &amp; Veil</title>
+    <meta name="description" content="View detailed premium makeup product specifications, select shade variants, and explore nourishing ingredients.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* --- VIP TIMER & PRODUCT POLISH --- */
+        .vip-timer-container {
+            background: linear-gradient(135deg, var(--bg-blush) 0%, #FFF8F9 100%);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem 2rem;
+            border-radius: 24px;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: 0 8px 25px rgba(183, 110, 121, 0.1);
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 8px 25px rgba(183, 110, 121, 0.1); }
+            50% { box-shadow: 0 12px 35px rgba(183, 110, 121, 0.25); }
+            100% { box-shadow: 0 8px 25px rgba(183, 110, 121, 0.1); }
+        }
+
+        .timer-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .timer-flame {
+            font-size: 1.5rem;
+            animation: flameWobble 1.5s infinite ease-in-out;
+        }
+
+        @keyframes flameWobble {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.15) rotate(5deg); }
+        }
+
+        .timer-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark-cocoa);
+        }
+
+        .timer-display {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .timer-box {
+            background: white;
+            border: 1px solid rgba(183, 110, 121, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            text-align: center;
+            min-width: 70px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .timer-val {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--rose-gold);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            font-weight: 600;
+        }
+
+        .timer-separator {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--rose-gold);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand-logo">
+                VELVET <span>&amp;</span> VEIL
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="./shop.html" class="nav-link active">Shop Catalog</a>
+                <a href="./about.html" class="nav-link">About Us</a>
+                <a href="./contactus.html" class="nav-link">Contact Concierge</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="cart-toggle" aria-label="Open Cart">
+                    Bag
+                    <span class="cart-badge">0</span>
+                </a>
+                <div class="auth-menu">
+                    <!-- Dynamically populated by main.js -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <main class="product-detail-section">
+        <div class="product-detail-container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <img src="../assets/images/lip.png" alt="Product Image" class="main-image">
+                </div>
+            </div>
+
+            <!-- Product Detail Content -->
+            <div class="product-detail-content">
+                <span class="detail-category">LIP ARTISTRY (LIP_LAB)</span>
+                <h1 class="detail-title">VELVET_MATTE_LIP_SERUM</h1>
+                <div class="detail-rating-container"></div>
+                <div class="detail-price-container"></div>
+                
+                <!-- VIP Flash Sale Timer -->
+                <div class="vip-timer-container">
+                    <div class="timer-header">
+                        <span class="timer-flame">&#128293;</span>
+                        <span class="timer-title">VIP Insider Offer Ends In:</span>
+                    </div>
+                    <div class="timer-display">
+                        <div class="timer-box"><span class="timer-val hours">03</span><span class="timer-label">Hours</span></div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box"><span class="timer-val minutes">42</span><span class="timer-label">Mins</span></div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box"><span class="timer-val seconds">15</span><span class="timer-label">Secs</span></div>
+                    </div>
+                </div>
+
+                <p class="detail-desc">A weightless, hydrating liquid lipstick infused with Argan oil that dries to a premium, transfer-proof matte finish.</p>
+
+                <!-- Shade Selector Section -->
+                <div class="shade-selector-section">
+                    <div class="shade-header">
+                        <span class="shade-title">Select Shade Variant</span>
+                        <span class="selected-shade-name">Ruby Velvet</span>
+                    </div>
+                    <div class="shades-list">
+                        <!-- Dynamically populated by main.js -->
+                    </div>
+                </div>
+
+                <!-- Add to Cart Controls -->
+                <div class="add-to-cart-wrapper">
+                    <div class="quantity-selector">
+                        <button class="qty-btn qty-dec">&minus;</button>
+                        <input type="text" value="1" class="qty-input" aria-label="Quantity">
+                        <button class="qty-btn qty-inc">&plus;</button>
+                    </div>
+                    <button class="btn-add-large">Add to Luxury Bag</button>
+                </div>
+
+                <!-- Product Accordion Info -->
+                <div class="product-accordion">
+                    <div class="accordion-item active">
+                        <button class="accordion-header">
+                            <span>Key Ingredients &amp; Actives</span>
+                            <span>&plus;</span>
+                        </button>
+                        <div class="accordion-content">
+                            Infused with 100% organic cold-pressed Argan Oil, Vitamin E, and micro-reflective gold flecks. Formulated without parabens, sulfates, or phthalates. Cruelty-free and vegan clean luxury.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How to Application Guide</span>
+                            <span>&plus;</span>
+                        </button>
+                        <div class="accordion-content">
+                            Using the surgical precision 0.1mm micro-tip or doe-foot applicator, glide smoothly across clean lips or skin. Allow 30 seconds for the weightless serum to set into a flawless, transfer-proof finish.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Shipping &amp; Complimentary Returns</span>
+                            <span>&plus;</span>
+                        </button>
+                        <div class="accordion-content">
+                            Enjoy express VIP shipping on all orders. Complimentary 30-day returns or shade exchanges if the skin-matching tone is not an absolute perfect fit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Products Section -->
+        <section class="recommended-section" style="margin-top: 8rem; border-top: 1px solid var(--glass-border); padding-top: 6rem;">
+            <span class="section-subtitle" style="text-align: center; display: block;">Complete Your Routine</span>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 4rem;">Recommended Luxury Matches</h2>
+            <div class="product-grid recommended-product-grid">
+                <!-- Dynamically populated by main.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Global FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">Explore everything you need to know about our clean luxury formulations, custom shade matching, and VIP shipping concierge.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-header">
+                        <span>What makes Velvet &amp; Veil formulations clean luxury?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        All our products are rigorously formulated without parabens, sulfates, phthalates, or synthetic mineral oils. We combine pure botanical actives like cold-pressed organic Argan Oil with surgical precision micro-pigments for high-performance, skin-nourishing wear.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How does the 30-day complimentary shade exchange work?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        We understand that finding your absolute perfect foundation or lip tone online can be challenging. If your selected shade isn't a flawless match, simply contact our VIP concierge within 30 days of delivery. We will immediately dispatch a replacement shade entirely complimentary.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Are your products cruelty-free and vegan?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Yes, Velvet &amp; Veil is 100% Leaping Bunny certified cruelty-free. Our entire product architecture is vegan, utilizing advanced plant-derived squalane and synthetic beeswax alternatives to ensure zero animal testing or animal derivatives.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How long does VIP express shipping take?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Orders placed before 2:00 PM IST are processed same-day by our flagship lab. VIP Express delivery typically arrives within 1 to 3 business days across major metropolitan areas, complete with live concierge tracking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+            <div>
+                <a href="../index.html" class="brand-logo" style="color: white; margin-bottom: 1.5rem;">
+                    VELVET <span style="color: var(--rose-gold-light);">&amp;</span> VEIL
+                </a>
+                <p class="footer-desc">Premium clean luxury makeup storefront backed by high-performance client storage architecture. Redefining modern beauty.</p>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Categories</h4>
+                <div class="footer-links">
+                    <a href="./shop.html" class="footer-link">Lip Artistry (Lip Lab)</a>
+                    <a href="./shop.html" class="footer-link">Face Sculpt &amp; Glow</a>
+                    <a href="./shop.html" class="footer-link">Eye Definition (Matrix)</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="./shop.html" class="footer-link">Shop Catalog</a>
+                    <a href="./about.html" class="footer-link">About Us</a>
+                    <a href="./contactus.html" class="footer-link">VIP Concierge</a>
+                    <a href="../admin/dashboard.html" class="footer-link">Admin Dashboard</a>
+                </div>
+
+            </div>
+            <div>
+                <h4 class="footer-col-title">Join The Insider Veil</h4>
+                <p class="footer-desc" style="font-size: 0.9rem;">Receive exclusive invitations to private shade releases and luxury beauty tutorials.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Velvet &amp; Veil Premium Cosmetics. All rights reserved.</div>
+            <div class="footer-legal-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
+                <a href="../legal/refund.html">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

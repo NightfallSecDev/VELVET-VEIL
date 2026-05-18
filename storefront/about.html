@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Velvet &amp; Veil Premium Cosmetics</title>
+    <meta name="description" content="Discover the heritage, clean luxury philosophy, and surgical precision formulation architecture behind Velvet & Veil cosmetics.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* --- ABOUT US SPECIFIC POLISH --- */
+        .about-hero {
+            padding: 12rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-blush) 0%, white 100%);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .about-hero-subtitle {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--rose-gold);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .about-hero-title {
+            font-size: 3.8rem;
+            color: var(--dark-cocoa);
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .about-hero-desc {
+            font-size: 1.25rem;
+            color: #554344;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* --- EDITORIAL STORY SECTION --- */
+        .story-section {
+            padding: 10rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .story-image-wrapper {
+            position: relative;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(43, 30, 31, 0.12);
+            border: 1px solid var(--glass-border);
+            background: linear-gradient(135deg, #FFF5F6 0%, #FFF 100%);
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .story-img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+            transform: scale(1.03);
+            transition: transform 0.7s ease;
+        }
+
+        .story-image-wrapper:hover .story-img {
+            transform: scale(1.08);
+        }
+
+        .story-content {
+            padding-right: 2rem;
+        }
+
+        .story-title {
+            font-size: 2.8rem;
+            color: var(--dark-cocoa);
+            margin-bottom: 2.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .story-text {
+            font-size: 1.15rem;
+            color: #554344;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+        }
+
+        .story-quote {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--rose-gold);
+            border-left: 3px solid var(--rose-gold);
+            padding-left: 2rem;
+            margin: 3rem 0;
+            line-height: 1.5;
+        }
+
+        /* --- ARCHITECTURAL PILLARS --- */
+        .about-pillars {
+            background: var(--alabaster);
+            padding: 10rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .pillars-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 28px;
+            border: 1px solid rgba(183, 110, 121, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(183, 110, 121, 0.12);
+            border-color: rgba(183, 110, 121, 0.3);
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            color: var(--dark-cocoa);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .pillar-desc {
+            font-size: 1.05rem;
+            color: #554344;
+            line-height: 1.7;
+        }
+
+        /* --- LAB & STUDIO SECTION --- */
+        .lab-section {
+            padding: 10rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 5rem;
+            text-align: left;
+        }
+
+        .lab-card {
+            position: relative;
+            border-radius: 32px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1A1213 0%, #2B1E1F 100%);
+            color: white;
+            padding: 6rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 450px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .lab-tag {
+            position: absolute;
+            top: 3rem;
+            left: 5rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--rose-gold-light);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .lab-title {
+            font-size: 2.4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .lab-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        @media (max-width: 1024px) {
+            .story-section { grid-template-columns: 1fr; gap: 5rem; }
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .lab-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-title { font-size: 2.8rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .lab-card { padding: 4rem 3rem; }
+            .lab-tag { top: 2rem; left: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand-logo">
+                VELVET <span>&amp;</span> VEIL
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="./shop.html" class="nav-link">Shop Catalog</a>
+                <a href="./about.html" class="nav-link active">About Us</a>
+                <a href="./contactus.html" class="nav-link">Contact Concierge</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="cart-toggle" aria-label="Open Cart">
+                    Bag
+                    <span class="cart-badge">0</span>
+                </a>
+                <div class="auth-menu">
+                    <!-- Dynamically populated by main.js -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <span class="about-hero-subtitle">Our Heritage &amp; Philosophy</span>
+        <h1 class="about-hero-title">Uncompromising Clean Luxury. Surgical Precision Pigment.</h1>
+        <p class="about-hero-desc">Velvet &amp; Veil was born from a singular, uncompromising vision: to bridge the gap between high-performance editorial makeup and skin-nourishing clean botanical science.</p>
+    </section>
+
+    <!-- Editorial Story Section -->
+    <section class="story-section">
+        <div class="story-content">
+            <span class="section-subtitle">The Editorial Genesis</span>
+            <h2 class="story-title">Redefining the Architecture of Modern Beauty</h2>
+            <p class="story-text">Founded between the haute couture runways of Paris and the vibrant, bespoke artisan labs of Mumbai, Velvet &amp; Veil challenged the traditional cosmetic paradigm. For decades, luxury beauty forced a compromise: endure heavy, pore-clogging synthetic waxes to achieve intense pigment, or accept sheer, fleeting color in the name of clean skincare.</p>
+            <p class="story-text">Our proprietary micro-milling process shatters this dichotomy. By calibrating pure mineral pigments down to 0.1 microns and suspending them in cold-pressed organic Argan oil and plant-derived squalane, we created formulas that deliver breathtaking, one-swipe opacity while actively repairing the skin barrier.</p>
+            <div class="story-quote">"True luxury is absolute transparency. It is knowing that what touches your skin is as pristine as it is high-performance."</div>
+            <p class="story-text">Today, Velvet &amp; Veil is the signature choice of lead runway artists, beauty editors, and discerning VIP clients worldwide who demand nothing less than absolute perfection.</p>
+        </div>
+        <div class="story-image-wrapper">
+            <img src="../assets/images/face.png" alt="Velvet &amp; Veil Editorial Formulation" class="story-img">
+        </div>
+    </section>
+
+    <!-- Architectural Pillars -->
+    <section class="about-pillars">
+        <div class="pillars-container">
+            <div class="section-header" style="text-align: center;">
+                <span class="section-subtitle">Our Foundations</span>
+                <h2 class="section-title">The Four Pillars of Velvet &amp; Veil</h2>
+                <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">The rigorous standards and ethical commitments that govern every formulation in our flagship inventory.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#128142;</div>
+                    <h3 class="pillar-title">Micro-Pigment Calibration</h3>
+                    <p class="pillar-desc">Surgical 0.1-micron milling ensures our lip serums and foundations lay down weightless, second-skin color with zero chalkiness or transfer.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#127807;</div>
+                    <h3 class="pillar-title">100% Clean Botanical Actives</h3>
+                    <p class="pillar-desc">Formulated entirely without parabens, sulfates, phthalates, or synthetic mineral oils. Every active ingredient is biocompatible and skin-nourishing.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#128048;</div>
+                    <h3 class="pillar-title">Cruelty-Free &amp; Vegan</h3>
+                    <p class="pillar-desc">Leaping Bunny certified ethical beauty. We utilize advanced plant squalane and synthetic beeswax alternatives to guarantee zero animal testing.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#128172;</div>
+                    <h3 class="pillar-title">Bespoke VIP Concierge</h3>
+                    <p class="pillar-desc">Complimentary 1-on-1 shade matching by professional makeup artists and a 30-day no-questions-asked concierge exchange guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab & Studio Section -->
+    <section class="lab-section">
+        <span class="section-subtitle">Global Footprint</span>
+        <h2 class="section-title">Our Flagship Mixing Labs</h2>
+        <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">Where cutting-edge cosmetic chemistry meets bespoke artisan craftsmanship.</p>
+        <div class="lab-grid">
+            <div class="lab-card" style="background: linear-gradient(135deg, rgba(43,30,31,0.95) 0%, rgba(26,18,19,0.95) 100%), url('../assets/images/lip.png') center/cover;">
+                <span class="lab-tag">MUMBAI FLAGSHIP LAB</span>
+                <h3 class="lab-title">The Bespoke Mixing Studio</h3>
+                <p class="lab-desc">Located at Nariman Point, our state-of-the-art mixing studio allows VIP clients to witness custom shade calibration in real-time. Equipped with advanced climate-controlled milling stations.</p>
+            </div>
+            <div class="lab-card" style="background: linear-gradient(135deg, rgba(43,30,31,0.95) 0%, rgba(26,18,19,0.95) 100%), url('../assets/images/eye.png') center/cover;">
+                <span class="lab-tag">PARIS ATELIER</span>
+                <h3 class="lab-title">The Runway Research Hub</h3>
+                <p class="lab-desc">Our Parisian atelier collaborates directly with haute couture designers and lead runway artists to forecast upcoming color trends and test long-wear formulations under extreme studio lighting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="color: #554344; max-width: 600px; margin: 1rem auto 0;">Explore everything you need to know about our clean luxury formulations, custom shade matching, and VIP shipping concierge.</p>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-header">
+                        <span>What makes Velvet &amp; Veil formulations clean luxury?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        All our products are rigorously formulated without parabens, sulfates, phthalates, or synthetic mineral oils. We combine pure botanical actives like cold-pressed organic Argan Oil with surgical precision micro-pigments for high-performance, skin-nourishing wear.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How does the 30-day complimentary shade exchange work?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        We understand that finding your absolute perfect foundation or lip tone online can be challenging. If your selected shade isn't a flawless match, simply contact our VIP concierge within 30 days of delivery. We will immediately dispatch a replacement shade entirely complimentary.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>Are your products cruelty-free and vegan?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Yes, Velvet &amp; Veil is 100% Leaping Bunny certified cruelty-free. Our entire product architecture is vegan, utilizing advanced plant-derived squalane and synthetic beeswax alternatives to ensure zero animal testing or animal derivatives.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-header">
+                        <span>How long does VIP express shipping take?</span>
+                        <span class="faq-toggle">&plus;</span>
+                    </button>
+                    <div class="faq-content">
+                        Orders placed before 2:00 PM IST are processed same-day by our flagship lab. VIP Express delivery typically arrives within 1 to 3 business days across major metropolitan areas, complete with live concierge tracking.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div>
+                <a href="../index.html" class="brand-logo" style="color: white; margin-bottom: 1.5rem;">
+                    VELVET <span style="color: var(--rose-gold-light);">&amp;</span> VEIL
+                </a>
+                <p class="footer-desc">Premium clean luxury makeup storefront backed by high-performance client storage architecture. Redefining modern beauty.</p>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Categories</h4>
+                <div class="footer-links">
+                    <a href="./shop.html" class="footer-link">Lip Artistry (Lip Lab)</a>
+                    <a href="./shop.html" class="footer-link">Face Sculpt &amp; Glow</a>
+                    <a href="./shop.html" class="footer-link">Eye Definition (Matrix)</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="./shop.html" class="footer-link">Shop Catalog</a>
+                    <a href="./about.html" class="footer-link">About Us</a>
+                    <a href="./contactus.html" class="footer-link">VIP Concierge</a>
+                    <a href="../admin/dashboard.html" class="footer-link">Admin Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Join The Insider Veil</h4>
+                <p class="footer-desc" style="font-size: 0.9rem;">Receive exclusive invitations to private shade releases and luxury beauty tutorials.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Email Address">
+                    <button class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Velvet &amp; Veil Premium Cosmetics. All rights reserved.</div>
+            <div class="footer-legal-links">
+                <a href="../legal/privacy.html">Privacy Policy</a>
+                <a href="../legal/terms.html">Terms of Service</a>
+                <a href="../legal/refund.html">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/store.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
